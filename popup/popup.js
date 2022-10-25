@@ -1,3 +1,9 @@
+
+
+chrome.storage.sync.get(["txtVal"], (res) => {
+  document.getElementById("txt-val").value = res.txtVal || 'By Coursera Auto Grade'
+})
+
 document.getElementById("txt-val").addEventListener("change", (e) => {
   chrome.storage.sync.set({ txtVal: e.target.value });
 });
